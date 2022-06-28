@@ -1,1 +1,1 @@
-web: gunicorn AppAero.wsgi --logfile -
+web: gunicorn AppAero.wsgi --log-file -

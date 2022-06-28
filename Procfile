@@ -1,1 +1,1 @@
-web: gunicorn AppAero.wsgi --log-file -
+web: gunicorn ProyectoFinalClone.wsgi --log-file -

@@ -1,0 +1,16 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">PASAJEROS</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> informacion en detalle de pasajeros</h2>
+
+<p> NOMBRE: {{pasajero.nombre}}</p>
+<p> APELLIDO: {{pasajero.apellido}}</p>
+<p>
+    <a href="{% url 'pasajeros' %}" > Volver a lista de pasajeros </a>
+</p>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">Busqueda de pasajeros y personal</h1>
+<h3 class="text-white-50 mx-auto mt-2 mb-5">Actualmente buscando a: {{apellido}}</h3>
+
+<h3>Pasajeros: </h3>
+{% for pasajero in pasajeros %}
+    <h2 class="text-white-50 mx-auto mt-2 mb-5"> {{pasajero.nombre}} {{pasajero.apellido}}</h2>
+{% endfor %}
+
+
+<h3>Pilotos: </h3>
+{% for piloto in pilotos %}
+    <h2 class="text-white-50 mx-auto mt-2 mb-5"> {{piloto.nombre}} {{piloto.apellido}} (Horas de Vuelo: {{piloto.horasDeVuelo}})</h2>
+{% endfor %}
+
+<h3>Azafatas: </h3>
+{% for azafata in azafatas %}
+    <h2 class="text-white-50 mx-auto mt-2 mb-5"> {{azafata.nombre}} {{azafata.apellido}} (Legajo: {{azafata.legajo}})</h2>
+{% endfor %}
+
+{% endblock %}

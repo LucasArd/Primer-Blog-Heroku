@@ -1,0 +1,35 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">Personal Administrativo</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5">Lista de personal Administrativo</h2>
+
+<ul>
+    {% for administrativo in object_list %}
+
+        <li>
+            <p> Nombre: {{ administrativo.nombre }} </p>
+            <p> Apellido: {{ administrativo.apellido }}</p>
+            <p> legajo: {{ administrativo.legajo }}</p>
+            <p>
+                <a href="{% url 'administrativosdetail' administrativo.id %}"> VER </a>
+                <br>
+                <a href="{% url 'administrativosupdate' administrativo.id %}"> EDITAR </a>
+                <br>
+                <a href="{% url 'administrativosdelete' administrativo.id %}"> BORRAR </a>
+
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+{% block footer %}
+<footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2022</div>
+    <p> {{dia}}</p>
+    
+</footer>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">AZAFATAS</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5">Lista de azafatas</h2>
+
+<ul>
+    {% for azafata in object_list %}
+
+        <li>
+            <p> Nombre: {{ azafata.nombre }} </p>
+            <p> Apellido: {{ azafata.apellido }}</p>
+            <p> legajo: {{ azafata.legajo }}</p>
+            <p>
+                <a href="{% url 'azafatasdetail' azafata.id %}"> VER </a>
+                <br>
+                <a href="{% url 'azafatasupdate' azafata.id %}"> EDITAR </a>
+                <br>
+                <a href="{% url 'azafatasdelete' azafata.id %}"> BORRAR </a>
+
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+{% block footer %}
+<footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2022</div>
+    <p> {{dia}}</p>
+    
+</footer>
+{% endblock %}

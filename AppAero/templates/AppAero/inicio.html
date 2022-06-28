@@ -1,0 +1,20 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+<li class="nav-item"><a class="nav-link" href="/AppAero/pasajerosformulario">Pasajeros</a></li>
+<li class="nav-item"><a class="nav-link" href="/AppAero/azafatasformulario">Azafatas</a></li>
+<li class="nav-item"><a class="nav-link" href="/AppAero/pilotosformulario">Pilotos</a></li>
+<li class="nav-item"><a class="nav-link" href="/AppAero/administrativosformulario">Personal Administrativo</a></li>
+<li class="nav-item"><a class="nav-link" href="/AppAero/busquedaapellido">Busqueda</a></li>
+{% if user.is_authenticated %}
+<li class="nav-item"><a class="nav-link" href="/AppAero/editarperfil">Tú Perfil</a></li>
+{% else %}
+<li class="nav-item"><a class="nav-link" href="/AppAero/login">Log In / Sign Up</a></li>
+{% endif %}
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">Aerolineas Coder</h1>   
+<h2 class="text-white-50 mx-auto mt-2 mb-5">Pagina informativa - pasajeros, azafatas, pilotos y Personal Administrativo -</h2>
+<h2 class="text-white-50 mx-auto mt-2 mb-5">{{fecha}}</h2>
+
+{% endblock %}

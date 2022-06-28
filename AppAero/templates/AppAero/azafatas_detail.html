@@ -1,0 +1,17 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">AZAFATAS</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> informacion en detalle de azafatas</h2>
+
+<p> NOMBRE: {{azafata.nombre}}</p>
+<p> APELLIDO: {{azafata.apellido}}</p>
+<p> LEGAJO: {{azafata.legajo}}</p>
+<p>
+    <a href="{% url 'azafatas' %}" > Volver a lista de azafatas </a>
+</p>
+
+{% endblock %}

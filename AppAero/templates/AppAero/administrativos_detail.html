@@ -1,0 +1,17 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">Personal Administrativo</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> informacion en detalle del personal administrativo</h2>
+
+<p> NOMBRE: {{administrativo.nombre}}</p>
+<p> APELLIDO: {{administrativo.apellido}}</p>
+<p> legajo: {{administrativo.legajo}}</p>
+<p>
+    <a href="{% url 'administrativo' %}" > Volver a lista del personal administrativo </a>
+</p>
+
+{% endblock %}

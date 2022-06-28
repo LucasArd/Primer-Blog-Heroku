@@ -1,0 +1,17 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">PILOTOS</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5"> informacion en detalle de pilotos</h2>
+
+<p> NOMBRE: {{piloto.nombre}}</p>
+<p> APELLIDO: {{piloto.apellido}}</p>
+<p> HORAS DE VUELO: {{piloto.horasDeVuelo}}</p>
+<p>
+    <a href="{% url 'pilotos' %}" > Volver a lista de pilotos </a>
+</p>
+
+{% endblock %}

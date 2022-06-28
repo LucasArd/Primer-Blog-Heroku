@@ -1,0 +1,36 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+<li class="nav-item"><a class="nav-link" href="pasajerosformulario">Pasajeros</a></li>
+<li class="nav-item"><a class="nav-link" href="azafatasformulario">Azafatas</a></li>
+<li class="nav-item"><a class="nav-link" href="pilotosformulario">Pilotos</a></li>
+<li class="nav-item"><a class="nav-link" href="administrativosformulario">Personal Administrativo</a></li>
+<li class="nav-item"><a class="nav-link" href="busquedaapellido">Busqueda</a></li>
+{% if user.is_authenticated %}
+<li class="nav-item"><a class="nav-link" href="/AppAero/editarperfil">Tú Perfil</a></li>
+{% else %}
+<li class="nav-item"><a class="nav-link" href="/AppAero/login">Log In / Sign Up</a></li>
+{% endif %}
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">PILOTOS</h1>
+{% if user.is_authenticated %}
+<h2 class="text-white-50 mx-auto mt-2 mb-5">Administrador de informacion de pilotos</h2>
+
+<form action="{% url 'pilotosformulario' %}"  method="POST"> {% csrf_token %}
+    <h3> Ingrese datos del piloto </h3>
+
+    <table>
+
+        {{ miFormulario.as_table }}
+    
+    </table>
+
+    <input type = "submit" value="Cargar piloto">
+
+</form>
+{% else %}
+<h2 class="text-white-50 mx-auto mt-2 mb-5">Es necesario acceder a una cuenta para ver esta página</h2>
+<li><h2 class="nav-item"><a class="nav-link" href="/AppAero/login">Log In / Sign Up</a></h2></li>
+{% endif %}
+{% endblock %}

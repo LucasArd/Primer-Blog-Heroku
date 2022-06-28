@@ -1,0 +1,22 @@
+{% extends "AppAero/padre.html" %}
+{% load static %}
+{% block navbar %}
+<li class="nav-item"><a class="nav-link" href="pasajerosformulario">Pasajeros</a></li>
+<li class="nav-item"><a class="nav-link" href="azafatasformulario">Azafatas</a></li>
+<li class="nav-item"><a class="nav-link" href="pilotosformulario">Pilotos</a></li>
+<li class="nav-item"><a class="nav-link" href="administrativosformulario">Personal Administrativo</a></li>
+<li class="nav-item"><a class="nav-link" href="busquedaapellido">Busqueda</a></li>
+{% endblock %}
+{% block modificable %}
+<h1 class="mx-auto my-0 text-uppercase">LOG IN / Sign Up</h1>
+<h2 class="text-white-50 mx-auto mt-2 mb-5">pagina de logueo</h2>
+
+<form action=" " method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type = "submit" > INICIAR SESION </button>
+</form>
+<button type = "submit" >
+    <a href="register">REGISTRAR USUARIO</a>
+</button>
+{% endblock %}

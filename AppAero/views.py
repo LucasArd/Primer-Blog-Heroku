@@ -125,7 +125,7 @@ def Buscar (request):
     return HttpResponse(respuesta)
 
 def BusquedaApellido (request):
-    return render(request, "AppAero/busquedaApellido.html")
+    return render(request, "AppAero/busquedaapellido.html")
 
 #------------------- PASAJEROS CRUD ------------------------------------------------
 
